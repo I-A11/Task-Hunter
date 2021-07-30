@@ -101,7 +101,7 @@ a {
 
 /* hero section */
 .hero {
-  height: 100vh;
+  height: 100%;
   background: #c9acec;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -138,6 +138,7 @@ select {
   outline: none;
   border: 1px solid #852020;
   font-weight: 700;
+  color: #4e4444;
 }
 
 .importance {
@@ -166,4 +167,71 @@ select {
   background: #852020;
   color: #fff;
   font-size: 1.5rem;
+}
+
+.task-board {
+  display: grid;
+}
+.search-container {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#search {
+  width: 400px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: #852020 1px solid;
+  border-right-style: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #fff;
+}
+
+#filter {
+  width: 150px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border: #852020 1px solid;
+  border-right-style: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+#filter,
+#search:focus {
+  outline: none;
+}
+
+#search input {
+  padding-left: 5px;
+}
+
+.btn-search,
+.btn-filter {
+  background: #852020;
+  color: #fff;
+  width: 30px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.search-container input {
+  padding-left: 5px;
+}
+
+.cards-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-gap: 35px;
+  justify-self: center;
+}
+
+.card {
+  border: 1px solid #852020;
+  height: 250px;
 }
