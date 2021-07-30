@@ -101,7 +101,7 @@ a {
 
 /* hero section */
 .hero {
-  height: 100%;
+  height: 100vh;
   background: #c9acec;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -224,14 +224,55 @@ select {
 }
 
 .cards-container {
-  margin-top: 50px;
+  margin: 50px 0;
   display: grid;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(2, minmax(250px, 400px));
   grid-gap: 35px;
   justify-self: center;
 }
 
 .card {
   border: 1px solid #852020;
+  border-radius: 4px;
   height: 250px;
+}
+
+.card h1 {
+  font-size: 1.7rem;
+  padding: 5px;
+}
+
+.card p {
+  font-size: 1.3rem;
+  padding: 5px;
+}
+
+.card-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px 0 5px;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.completed,
+.edit,
+.delete {
+  background: transparent;
+  border: none;
+  padding-right: 5px;
+}
+
+.completed {
+  color: #187918;
+  font-size: 1.2rem;
+}
+
+.edit {
+  color: #1c1cbb;
+  font-size: 1.1rem;
+}
+.delete {
+  color: #a51818;
+  font-size: 1.1rem;
 }
