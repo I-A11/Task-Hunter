@@ -54,7 +54,57 @@
       </nav>
     </header>
     <section class="hero">
-      <div class="task-container"></div>
+      <div class="task-container">
+        <h1>Create a New Task</h1>
+
+        <form action="/">
+          <label for="task-name">Task Name:</label>
+          <input
+            type="text"
+            name="task-name"
+            id="task-name"
+            required
+            placeholder="Enter Task Name"
+          />
+          <label for="task-info">Description:</label>
+          <input
+            type="text"
+            name="task-info"
+            id="task-info"
+            required
+            placeholder="Enter Task Description"
+          />
+          <label for="date">Due Date:</label>
+          <input type="date" name="date" id="date" required />
+
+          <label for="assigned">Assigned to:</label>
+          <input
+            type="text"
+            name="assigned"
+            id="assigned"
+            required
+            placeholder="Enter Assignee's Name"
+          />
+          <select name="status" id="status">
+            <option>Select task status</option>
+            <option>In Progress</option>
+            <option>Postponed</option>
+            <option>Completed</option>
+          </select>
+          <div class="importance">
+            <p>Task Importance</p>
+            <div class="rating">
+              <i class="rating-star far fa-star"></i>
+              <i class="rating-star far fa-star"></i>
+              <i class="rating-star far fa-star"></i>
+              <i class="rating-star far fa-star"></i>
+              <i class="rating-star far fa-star"></i>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">Add</button>
+        </form>
+      </div>
       <div class="task-board"></div>
     </section>
     <script src="./app.js"></script>
