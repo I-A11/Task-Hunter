@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: "Inconsolata", monospace;
+  background: #c9acec;
 }
 
 ul {
@@ -101,7 +102,7 @@ a {
 
 /* hero section */
 .hero {
-  height: 100vh;
+  /* height: 100vh; */
   background: #c9acec;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -234,7 +235,8 @@ select {
 .card {
   border: 1px solid #852020;
   border-radius: 4px;
-  height: 250px;
+  height: auto;
+  align-self: start;
 }
 
 .card h1 {
