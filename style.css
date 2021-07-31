@@ -11,7 +11,7 @@ html {
 
 body {
   font-family: "Inconsolata", monospace;
-  background: #c9acec;
+  background-image: linear-gradient(to right, #c2e1fa 0%, #e1d3f1 100%);
 }
 
 ul {
@@ -102,15 +102,15 @@ a {
 
 /* hero section */
 .hero {
-  /* height: 100vh; */
-  background: #c9acec;
+  height: 100vh;
+  /* background: #c9acec; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
 }
 
 .task-container {
-  border-right: 1px solid #fff;
+  border-right: 3px solid #fff;
 }
 
 .task-container h1 {
@@ -207,10 +207,6 @@ select {
   outline: none;
 }
 
-#search input {
-  padding-left: 5px;
-}
-
 .btn-search,
 .btn-filter {
   background: #852020;
@@ -277,4 +273,71 @@ select {
 .delete {
   color: #a51818;
   font-size: 1.1rem;
+}
+
+/* hero section responsive */
+@media screen and (max-width: 1250px) {
+  .importance {
+    display: inline-block;
+    margin: 15px;
+  }
+
+  .importance p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .task-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #852020;
+    margin: 30px 10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cards-container {
+    grid-template-columns: repeat(1, minmax(250px, 400px));
+  }
+
+  .search-container {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  #search {
+    width: 300px;
+  }
+
+  #filter {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .btn-search,
+  .btn-filter {
+    width: 25px;
+  }
+  #search {
+    width: 150px;
+  }
+
+  #filter {
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .task-container {
+    border-bottom: 3px solid #fff;
+  }
 }
