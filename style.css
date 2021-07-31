@@ -11,7 +11,12 @@ html {
 
 body {
   font-family: "Inconsolata", monospace;
-  background-image: linear-gradient(to right, #c2e1fa 0%, #e1d3f1 100%);
+  background-image: linear-gradient(
+    to right,
+    #ece4f6 10%,
+    #dddcf3 30%,
+    #e2cffa 60%
+  );
 }
 
 ul {
