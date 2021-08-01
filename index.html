@@ -57,40 +57,49 @@
       <div class="task-container">
         <h1>Create a New Task</h1>
 
-        <form action="/" method="GET">
-          <label for="task-name">Task Name:</label>
-          <input
-            type="text"
-            name="task-name"
-            id="task-name"
-            required
-            placeholder="Enter Task Name"
-          />
-          <label for="task-info">Description:</label>
-          <input
-            type="text"
-            name="task-info"
-            id="task-info"
-            required
-            placeholder="Enter Task Description"
-          />
-          <label for="date">Due Date:</label>
-          <input type="date" name="date" id="date" required />
-
-          <label for="assigned">Assigned to:</label>
-          <input
-            type="text"
-            name="assigned"
-            id="assigned"
-            required
-            placeholder="Enter Assignee's Name"
-          />
-          <select name="status" id="status" required>
-            <option>Select task status</option>
-            <option>In Progress</option>
-            <option>Postponed</option>
-            <option>Completed</option>
-          </select>
+        <form id="form" action="/" method="GET">
+          <div class="from-control">
+            <label for="task-name">Task Name:</label>
+            <input
+              type="text"
+              name="task-name"
+              id="task-name"
+              placeholder="Enter Task Name"
+            />
+            <div class="small"></div>
+          </div>
+          <div class="from-control">
+            <label for="task-info">Description:</label>
+            <input
+              type="text"
+              name="task-info"
+              id="task-info"
+              placeholder="Enter Task Description"
+            />
+            <div class="small"></div>
+          </div>
+          <div class="from-control">
+            <label for="date">Due Date:</label>
+            <input type="date" name="date" id="date" required />
+          </div>
+          <div class="from-control">
+            <label for="assigned">Assigned to:</label>
+            <input
+              type="text"
+              name="assigned"
+              id="assigned"
+              placeholder="Enter Assignee's Name"
+            />
+            <div class="small"></div>
+          </div>
+          <div class="from-control">
+            <select name="status" id="status" required>
+              <option>Select task status</option>
+              <option>In Progress</option>
+              <option>Postponed</option>
+              <option>Completed</option>
+            </select>
+          </div>
           <div class="importance">
             <p>Task Importance</p>
             <div class="rating">
