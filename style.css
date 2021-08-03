@@ -361,3 +361,7 @@ select {
   color: #080707;
   margin-bottom: 5px;
 }
+.is-valid,
+.is-invalid {
+  visibility: hidden;
+}

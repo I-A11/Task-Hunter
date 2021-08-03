@@ -58,7 +58,7 @@
         <h1>Create a New Task</h1>
 
         <form id="form" action="/" method="GET">
-          <div class="from-control">
+          <div class="from-control" id="form-control">
             <label for="task-name">Task Name:</label>
             <input
               type="text"
@@ -68,7 +68,7 @@
             />
             <div class="small"></div>
           </div>
-          <div class="from-control">
+          <div class="from-control" id="form-description">
             <label for="task-info">Description:</label>
             <input
               type="text"
@@ -78,13 +78,13 @@
             />
             <div class="small"></div>
           </div>
-          <div class="from-control">
+          <div class="from-control" id="form-date">
             <label for="date">Due Date:</label>
             <input type="date" name="date" id="date" />
             <div class="small"></div>
           </div>
 
-          <div class="from-control">
+          <div class="from-control" id="form-assigned">
             <label for="assigned">Assigned to:</label>
             <input
               type="text"
@@ -94,7 +94,7 @@
             />
             <div class="small"></div>
           </div>
-          <div class="from-control">
+          <div class="from-control" id="form-status">
             <select name="status" id="status" required>
               <option>Select task status</option>
               <option>In Progress</option>
