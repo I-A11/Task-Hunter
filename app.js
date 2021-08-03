@@ -12,6 +12,8 @@ const form = document.querySelector("#form");
 const taskName = document.querySelector("#task-name");
 const description = document.querySelector("#task-info");
 const assigned = document.querySelector("#assigned");
+const dueDate = document.querySelector("#date");
+const status = document.querySelector("#status");
 
 //
 
@@ -45,6 +47,22 @@ function checkInputs() {
     setErrorFor(assigned, "Assignee's name cannot be blank");
   } else {
     setSuccessFor(assigned, "Looks good!");
+  }
+
+  //date validation
+  const dueDateValue = dueDate.value;
+  if (!dueDateValue) {
+    setErrorFor(dueDate, "Due Date cannot be empty");
+  } else {
+    setSuccessFor(dueDate, "Looks good!");
+  }
+
+  //status validation
+  const statusValue = status.value;
+  if (statusValue === "Select task status") {
+    setErrorFor(status, "Status cannot be empty");
+  } else {
+    setSuccessFor(status, "Looks good!");
   }
 }
 
