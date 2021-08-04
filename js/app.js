@@ -6,26 +6,33 @@ toggleBtn.addEventListener("click", () => {
   links.classList.toggle("show-links");
 });
 // make new taskmanger
-const taskManger = new TaskManger();
-// validation form data
-
+const taskManger = new TaskManger(0);
 const form = document.querySelector("#form");
-const taskName = document.querySelector("#task-name");
-const description = document.querySelector("#task-info");
-const assigned = document.querySelector("#assigned");
-const dueDate = document.querySelector("#date");
-const status = document.querySelector("#status");
-////////////////
-const formControl = document.querySelector("#form-control");
-const formDescription = document.querySelector("#form-description");
-const formDate = document.querySelector("#form-date");
-const formAssigned = document.querySelector("#form-assigned");
-const formStatus = document.querySelector("#form-status");
-let validationFail = 0;
 
 //
 
 form.addEventListener("submit", (e) => {
+  // validation form data
+  const taskName = document.querySelector("#task-name");
+  const description = document.querySelector("#task-info");
+  const assigned = document.querySelector("#assigned");
+  const dueDate = document.querySelector("#date");
+  const status = document.querySelector("#status");
+
+  const isValid = document.querySelector(".is-valid");
+  const isInvalid = document.querySelector(".is-invalid");
+  const descriptionValid = document.querySelector("#description-valid");
+  const descriptionInvalid = document.querySelector("#description-invalid");
+  const dateValid = document.querySelector("#date-valid");
+  const dateInvalid = document.querySelector("#date-invalid");
+  const assignedValid = document.querySelector("#assigned-valid");
+  const assignedInvalid = document.querySelector("#assigned-invalid");
+  const statusValid = document.querySelector("#status-valid");
+  const statusInvalid = document.querySelector("#status-invalid");
+
+  let validationFail = 0;
+  // validation form data
+
   e.preventDefault();
 
   // clear all inputs after submission
@@ -35,13 +42,57 @@ form.addEventListener("submit", (e) => {
     assigned.value = "";
     status.value = "Select task status";
     dueDate.value = "";
-    formControl.classList.remove("error");
-    formDescription.classList.remove("error");
-    formDate.classList.remove("error");
-    formAssigned.classList.remove("error");
-    formStatus.classList.remove("error");
+    isValid.classList.remove("valid");
+    descriptionValid.classList.remove("valid");
+    dateValid.classList.remove("valid");
+    assignedValid.classList.remove("valid");
+    statusValid.classList.remove("valid");
   };
-  checkInputs();
+
+  if (taskName.value.length < 1) {
+    isValid.classList.remove("valid");
+    isInvalid.classList.add("invalid");
+    validationFail++;
+  } else {
+    isInvalid.classList.remove("invalid");
+    isValid.classList.add("valid");
+  }
+
+  if (description.value.length > 5) {
+    descriptionInvalid.classList.remove("invalid");
+    descriptionValid.classList.add("valid");
+  } else {
+    descriptionValid.classList.remove("valid");
+    descriptionInvalid.classList.add("invalid");
+    validationFail++;
+  }
+  if (dueDate.value === "") {
+    dateValid.classList.remove("valid");
+    dateInvalid.classList.add("invalid");
+    validationFail++;
+  } else {
+    dateValid.classList.add("valid");
+    dateInvalid.classList.remove("invalid");
+  }
+
+  if (assigned.value.length > 0) {
+    assignedInvalid.classList.remove("invalid");
+    assignedValid.classList.add("valid");
+  } else {
+    assignedValid.classList.remove("valid");
+    assignedInvalid.classList.add("invalid");
+    validationFail++;
+  }
+
+  if (status.value === "Select task status") {
+    statusValid.classList.remove("valid");
+    statusInvalid.classList.add("invalid");
+    validationFail++;
+  } else {
+    statusValid.classList.add("valid");
+    statusInvalid.classList.remove("invalid");
+  }
+  // ///////
   if (validationFail > 0) {
     validationFail = 0;
     return;
@@ -59,71 +110,6 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function checkInputs() {
-  //Task Name validation
-  const taskNameValue = taskName.value.trim();
-  if (taskNameValue === "") {
-    setErrorFor(taskName, "Task Name cannot be blank");
-    validationFail++;
-  } else {
-    setSuccessFor(taskName, "Looks good!");
-  }
-
-  // Desvription validation
-  const descriptionValue = description.value.trim();
-  if (descriptionValue.length < 5) {
-    setErrorFor(
-      description,
-      "Description needs to be 5 characters long or more "
-    );
-    validationFail++;
-  } else {
-    setSuccessFor(description, "Looks good!");
-  }
-
-  // Assigned validation
-  const assignedValue = assigned.value.trim();
-  if (assignedValue === "") {
-    setErrorFor(assigned, "Assignee's name cannot be blank");
-    validationFail++;
-  } else {
-    setSuccessFor(assigned, "Looks good!");
-  }
-
-  //date validation
-  const dueDateValue = dueDate.value;
-  if (!dueDateValue) {
-    setErrorFor(dueDate, "Due Date cannot be empty");
-    validationFail++;
-  } else {
-    setSuccessFor(dueDate, "Looks good!");
-  }
-
-  //status validation
-  const statusValue = status.value;
-  if (statusValue === "Select task status") {
-    setErrorFor(status, "Status cannot be empty");
-    validationFail++;
-  } else {
-    setSuccessFor(status, "Looks good!");
-  }
-}
-
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector(".small");
-
-  small.innerText = message;
-  formControl.classList.add("error");
-}
-
-function setSuccessFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector(".small");
-  small.innerText = message;
-  formControl.classList.add("error");
-}
-
 // Date validation
 const date = new Date();
 let todayDate = date.getDate();
@@ -137,3 +123,13 @@ if (month < 10) {
 const year = date.getFullYear();
 const minDate = year + "-" + month + "-" + todayDate;
 document.querySelector("#date").setAttribute("min", minDate);
+//////////
+const taskHtml = createTaskHtml(
+  "water the garden",
+  "put water to the garden",
+  " 05/05/2021",
+  "islam",
+  "Completed"
+);
+
+console.log(taskHtml);

@@ -66,7 +66,8 @@
               id="task-name"
               placeholder="Enter Task Name"
             />
-            <div class="small"></div>
+            <div class="is-valid">Looks good!</div>
+            <div class="is-invalid">Task Name cannot be blank</div>
           </div>
           <div class="from-control" id="form-description">
             <label for="task-info">Description:</label>
@@ -76,12 +77,16 @@
               id="task-info"
               placeholder="Enter Task Description"
             />
-            <div class="small"></div>
+            <div class="is-valid" id="description-valid">Looks good!</div>
+            <div class="is-invalid" id="description-invalid">
+              Task description cannot be blank
+            </div>
           </div>
           <div class="from-control" id="form-date">
             <label for="date">Due Date:</label>
             <input type="date" name="date" id="date" />
-            <div class="small"></div>
+            <div class="is-valid" id="date-valid">Looks good!</div>
+            <div class="is-invalid" id="date-invalid">Date cannot be blank</div>
           </div>
 
           <div class="from-control" id="form-assigned">
@@ -92,7 +97,10 @@
               id="assigned"
               placeholder="Enter Assignee's Name"
             />
-            <div class="small"></div>
+            <div class="is-valid" id="assigned-valid">Looks good!</div>
+            <div class="is-invalid" id="assigned-invalid">
+              Assignee's name cannot be blank
+            </div>
           </div>
           <div class="from-control" id="form-status">
             <select name="status" id="status" required>
@@ -101,9 +109,12 @@
               <option>Postponed</option>
               <option>Completed</option>
             </select>
-            <div class="small"></div>
+            <div class="is-valid" id="status-valid">Looks good!</div>
+            <div class="is-invalid" id="status-invalid">
+              Status cannot be empty
+            </div>
           </div>
-          <div class="importance">
+          <!-- <div class="importance">
             <p>Task Importance</p>
             <div class="rating">
               <i class="rating-star far fa-star"></i>
@@ -112,7 +123,7 @@
               <i class="rating-star far fa-star"></i>
               <i class="rating-star far fa-star"></i>
             </div>
-          </div>
+          </div> -->
 
           <button class="btn" type="submit">Add</button>
         </form>
@@ -136,7 +147,7 @@
             <i class="fas fa-filter"></i>
           </button>
         </div>
-        <div class="cards-container">
+        <!-- <div class="cards-container">
           <div class="card">
             <h1>Water the garden</h1>
             <p>
@@ -173,7 +184,7 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <script src="./js/taskManger.js"></script>

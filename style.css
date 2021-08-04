@@ -128,7 +128,7 @@ a {
 
 form {
   display: grid;
-  margin: 10px 20px;
+  margin: 0 20px;
   font-size: 1.5rem;
   color: #4e4444;
   font-weight: 700;
@@ -141,7 +141,7 @@ form {
 form input,
 select {
   height: 40px;
-  margin: 10px 5px 15px;
+  margin: 5px 5px 5px;
   border-radius: 5px;
   padding: 0 5px;
   font-size: 1rem;
@@ -351,17 +351,16 @@ select {
   }
 }
 
-.from-control .small {
+.is-valid,
+.is-invalid {
   visibility: hidden;
+  height: 20px;
 }
 
-.from-control.error .small {
+.valid,
+.invalid {
   visibility: visible;
   font-size: 1rem;
   color: #080707;
   margin-bottom: 5px;
-}
-.is-valid,
-.is-invalid {
-  visibility: hidden;
 }
