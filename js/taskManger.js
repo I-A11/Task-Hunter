@@ -1,6 +1,6 @@
 const createTaskHtml = (name, description, dueDate, assigned, status) => {
   const html = `
-    <div class="card">
+    <div class="card" >
             <h1>${name}</h1>
             <p>
               ${description}
@@ -32,11 +32,31 @@ class TaskManger {
       description: description,
       dueDate: dueDate,
       assigned: assigned,
-
       status: status,
     };
-    this.tasks.push({ task });
+    this.tasks.push(task);
   }
 
-  // ////////
+  // render
+
+  render() {
+    let tasksHtmlList = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      const date = new Date(task.dueDate);
+      const formattedDate =
+        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      const taskHtml = createTaskHtml(
+        task.name,
+        task.description,
+        formattedDate,
+        task.assigned,
+        task.status
+      );
+      tasksHtmlList.push(taskHtml);
+    }
+    const taskHtml = tasksHtmlList.join("\n");
+    const taskList = document.querySelector("#task-list");
+    taskList.innerHTML = taskHtml;
+  }
 }

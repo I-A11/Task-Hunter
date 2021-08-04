@@ -102,11 +102,12 @@ form.addEventListener("submit", (e) => {
     taskManger.addTask(
       taskName.value,
       description.value,
-      assigned.value,
       dueDate.value,
+      assigned.value,
       status.value
     );
     clearFields();
+    taskManger.render();
   }
 });
 
@@ -124,12 +125,13 @@ const year = date.getFullYear();
 const minDate = year + "-" + month + "-" + todayDate;
 document.querySelector("#date").setAttribute("min", minDate);
 //////////
-const taskHtml = createTaskHtml(
-  "water the garden",
-  "put water to the garden",
-  " 05/05/2021",
-  "islam",
-  "Completed"
-);
 
-console.log(taskHtml);
+// const taskHtml = createTaskHtml(
+//   "water the garden",
+//   "put water to the garden",
+//   " 05/05/2021",
+//   "islam",
+//   "Completed"
+// );
+
+// console.log(taskHtml);
