@@ -39,6 +39,17 @@ class TaskManger {
     this.tasks.push(task);
   }
 
+  getTaskById(taskId) {
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (taskId === task.id) {
+        foundTask = task;
+      }
+    }
+    return foundTask;
+  }
+
   // render
 
   render() {

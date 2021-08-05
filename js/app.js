@@ -141,13 +141,13 @@ const taskList = document.querySelector("#task-list");
 
 taskList.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
-    // console.log(
-    //   event.target.parentElement.parentElement.parentElement.parentElement
-    //     .parentElement
-    // );
     const parentTask =
-      event.target.parentElement.parentElement.parentElement.parentElement
-        .parentElement;
-    console.log(parentTask);
+      event.target.parentElement.parentElement.parentElement.parentElement;
+    // console.log(parentTask);
+    const taskId = Number(parentTask.dataset.taskId);
+    const task = taskManger.getTaskById(taskId);
+    task.status = "Done";
+
+    taskManger.render();
   }
 });
