@@ -1,6 +1,6 @@
-const createTaskHtml = (name, description, dueDate, assigned, status) => {
+const createTaskHtml = (id, name, description, dueDate, assigned, status) => {
   const html = `
-    <div class="card" >
+    <div class="card" data-task-id= "${id}" >
             <h1>${name}</h1>
             <p>
               ${description}
@@ -10,9 +10,11 @@ const createTaskHtml = (name, description, dueDate, assigned, status) => {
             <div class="card-status">
               ${status}
               <span>
-                <button class="completed"><i class="fas fa-check"></i></button>
-                <button class="edit"><i class="fas fa-pen"></i></button>
-                <button class="delete"><i class="fas fa-trash"></i></button>
+                <button class= "done-button completed">
+                  <i class="fas fa-check done-button"></i>
+                </button>
+                <button class="edit edit-button" ><i class="fas fa-pen"></i></button>
+                <button class="delete delete-button"><i class="fas fa-trash"></i></button>
               </span>
             </div>
           </div>
@@ -47,6 +49,7 @@ class TaskManger {
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       const taskHtml = createTaskHtml(
+        task.id,
         task.name,
         task.description,
         formattedDate,
@@ -56,7 +59,7 @@ class TaskManger {
       tasksHtmlList.push(taskHtml);
     }
     const taskHtml = tasksHtmlList.join("\n");
-    const taskList = document.querySelector("#task-list");
-    taskList.innerHTML = taskHtml;
+    const tasksList = document.querySelector("#task-list");
+    tasksList.innerHTML = taskHtml;
   }
 }

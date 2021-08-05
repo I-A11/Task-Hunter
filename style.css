@@ -151,22 +151,6 @@ select {
   color: #4e4444;
 }
 
-.importance {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px;
-}
-
-.importance p {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.fa-star {
-  font-size: 1.2rem;
-  color: #852020;
-}
-
 .btn {
   width: 200px;
   padding: 10px 40px;

@@ -135,3 +135,19 @@ document.querySelector("#date").setAttribute("min", minDate);
 // );
 
 // console.log(taskHtml);
+
+const taskList = document.querySelector("#task-list");
+// console.log(taskList);
+
+taskList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("done-button")) {
+    // console.log(
+    //   event.target.parentElement.parentElement.parentElement.parentElement
+    //     .parentElement
+    // );
+    const parentTask =
+      event.target.parentElement.parentElement.parentElement.parentElement
+        .parentElement;
+    console.log(parentTask);
+  }
+});
