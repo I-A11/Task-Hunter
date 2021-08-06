@@ -7,9 +7,10 @@ toggleBtn.addEventListener("click", () => {
 });
 // make new taskmanger
 const taskManger = new TaskManger(0);
-const form = document.querySelector("#form");
+taskManger.load();
 
-//
+taskManger.render();
+const form = document.querySelector("#form");
 
 form.addEventListener("submit", (e) => {
   // validation form data
@@ -107,6 +108,7 @@ form.addEventListener("submit", (e) => {
       status.value
     );
     clearFields();
+    taskManger.save();
     taskManger.render();
   }
 });
@@ -147,6 +149,8 @@ taskList.addEventListener("click", (event) => {
     const taskId = Number(parentTask.dataset.taskId);
     const task = taskManger.getTaskById(taskId);
     task.status = "Done";
+
+    taskManger.save();
 
     taskManger.render();
   }
