@@ -13,9 +13,9 @@ body {
   font-family: "Inconsolata", monospace;
   background-image: linear-gradient(
     to right,
-    #ece4f6 10%,
-    #dddcf3 30%,
-    #e2cffa 60%
+    #56e6e6 10%,
+    #51cedf 30%,
+    #50a4be 60%
   );
 }
 
@@ -249,34 +249,6 @@ select {
 @media screen and (max-width: 1000px) {
   .cards-container {
     grid-template-columns: repeat(1, minmax(250px, 400px));
-  }
-
-  .search-container {
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  #search {
-    width: 300px;
-  }
-
-  #filter {
-    width: 100px;
-  }
-}
-
-@media screen and (max-width: 740px) {
-  .btn-search,
-  .btn-filter {
-    width: 25px;
-  }
-  #search {
-    width: 150px;
-  }
-
-  #filter {
-    width: 70px;
   }
 }
 

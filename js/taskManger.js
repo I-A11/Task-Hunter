@@ -11,7 +11,7 @@ const createTaskHtml = (id, name, description, dueDate, assigned, status) => {
               ${status}
               <span>
                 <button class= "done-button completed">
-                  <i class="fas fa-check done-button"></i>
+                  <i class=" fas fa-check done-button"></i>
                 </button>
                 
                 <button class="delete"><i class="fas fa-trash delete-button"></i></button>
