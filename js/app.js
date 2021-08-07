@@ -126,17 +126,6 @@ if (month < 10) {
 const year = date.getFullYear();
 const minDate = year + "-" + month + "-" + todayDate;
 document.querySelector("#date").setAttribute("min", minDate);
-//////////
-
-// const taskHtml = createTaskHtml(
-//   "water the garden",
-//   "put water to the garden",
-//   " 05/05/2021",
-//   "islam",
-//   "Completed"
-// );
-
-// console.log(taskHtml);
 
 const taskList = document.querySelector("#task-list");
 // console.log(taskList);
