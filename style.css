@@ -219,6 +219,7 @@ select {
   grid-template-columns: repeat(2, minmax(250px, 400px));
   grid-gap: 35px;
   justify-self: center;
+  align-self: flex-start;
 }
 
 .card {

@@ -14,7 +14,7 @@ const createTaskHtml = (id, name, description, dueDate, assigned, status) => {
                   <i class="fas fa-check done-button"></i>
                 </button>
                 <button class="edit edit-button" ><i class="fas fa-pen"></i></button>
-                <button class="delete delete-button"><i class="fas fa-trash"></i></button>
+                <button class="delete"><i class="fas fa-trash delete-button"></i></button>
               </span>
             </div>
           </div>
@@ -96,5 +96,16 @@ class TaskManger {
 
       this.currentId = Number(currentId);
     }
+  }
+
+  deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (taskId !== task.id) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
   }
 }
