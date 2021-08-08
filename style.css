@@ -19,14 +19,6 @@ body {
   );
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 .nav {
   background: #362749;
   cursor: pointer;
@@ -50,39 +42,7 @@ a {
   -moz-text-fill-color: transparent;
   cursor: pointer;
   font-weight: 700;
-  font-size: 1.9rem;
-}
-.links {
-  height: 0;
-  overflow: hidden;
-}
-
-.show-links {
-  height: 120px;
-  display: block;
-}
-.links li {
-  margin: 5px 15px;
-}
-
-.links-a {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 500;
-  padding: 0 5px;
-  letter-spacing: 2px;
-}
-
-.fa-map,
-.fa-edit,
-.fa-calendar-alt {
-  font-size: 1.5rem;
-  margin-right: 5px;
-  color: #fff;
-}
-
-.toggle {
-  color: #da3c3c;
+  font-size: 2.3rem;
 }
 
 /* navbar min width 800 px */
@@ -93,22 +53,11 @@ a {
     justify-content: space-around;
     align-items: center;
   }
-  .links {
-    display: flex;
-    height: auto !important;
-    align-items: center;
-    margin-right: 20px;
-  }
-
-  .toggle {
-    display: none;
-  }
 }
 
 /* hero section */
 .hero {
   height: 100vh;
-  /* background: #c9acec; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
@@ -182,7 +131,8 @@ select {
 }
 
 .card {
-  border: 1px solid #852020;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  background: #fff;
   border-radius: 4px;
   height: auto;
   align-self: start;
